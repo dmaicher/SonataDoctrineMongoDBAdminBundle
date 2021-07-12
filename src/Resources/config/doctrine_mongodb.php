@@ -38,8 +38,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
         ->set('sonata.admin.builder.doctrine_mongodb_form', FormContractor::class)
             ->args([
-                (new ReferenceConfigurator('form.factory'))->ignoreOnInvalid(),
-                (new ReferenceConfigurator('form.registry'))->ignoreOnInvalid(),
+                new ReferenceConfigurator('form.factory'),
+                new ReferenceConfigurator('form.registry'),
             ])
 
         ->set('sonata.admin.builder.doctrine_mongodb_list', ListBuilder::class)
